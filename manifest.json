@@ -1,0 +1,27 @@
+{
+	"manifest_version": 3,
+	"name": "Content Summarizer",
+	"version": "1.0.0",
+	"action": {
+	  "default_popup": "index.html"
+	},
+	"permissions": [
+	  "activeTab",
+	  "https://api.exa.ai/*",
+	  "storage",
+	  "scripting"
+	],
+	"host_permissions": [
+	  "https://api.exa.ai/*",
+	  "<all_urls>"
+	],
+	"background": {
+	  "service_worker": "./background.js"
+	},
+	"content_scripts": [
+	  {
+		"matches": ["<all_urls>"],
+		"js": ["content.js"]
+	  }
+	]
+  }
